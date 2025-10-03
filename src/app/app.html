@@ -1,0 +1,42 @@
+<div class="resume">
+  <header class="resume-header">
+    <h1>{{ name }}</h1>
+    <div class="contact-info">
+      <p>{{ age }} лет</p>
+    </div>
+  </header>
+
+  <section class="experience-section">
+    <h3>Опыт работы</h3>
+    @if (hasExperience)
+    {
+      <div class="experience-block">
+        <div class="status-badge success">
+          Имеется опыт коммерческой разработки
+        </div>
+      </div>
+    }
+    @else 
+    {
+      <div class="experience-block">
+        <div class="status-badge info">
+          Пока нет коммерческого опыта, но есть учебные проекты
+        </div>
+        <p>Активно учусь и развиваюсь в IT-сфере</p>
+      </div>
+    }
+  </section>
+
+  <section class="skills-section">
+    <h3>Навыки и умения</h3>
+    <div class="skills-list">
+       @for (skill of skills; track skill)
+        {
+          <div class="skill-item">
+            {{skill}} 
+          </div>
+        }
+    </div>
+  </section>
+
+</div>
